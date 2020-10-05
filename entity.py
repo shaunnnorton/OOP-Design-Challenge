@@ -5,8 +5,8 @@ class Entity(ABC):
         self.name = name
         self.image = pygame.image.load(image).convert_alpha()
         self.dimensions = dimensions
-        self.offset_X = dimensions[0]/2
-        self.offset_Y = dimensions[1]/2
+        self.offset_X = dimensions[0]//2
+        self.offset_Y = dimensions[1]//2
 
     @abstractmethod
     def move(self):
