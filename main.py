@@ -7,13 +7,13 @@ from alienthree import AlienThree
 pygame.display.init()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((800,800))
-background = pygame.image.load('hello.jpg').convert()
+background = pygame.image.load('DesignChallengeBG.png').convert()
 screen.blit(background,(0,0))
-player = pygame.image.load('Juice Productions Logo copy.png').convert()
-player = Player('player',"Juice Productions Logo copy.png",[80,80],[400,720],'keys')
-alien = AlienOne('alien',"apple.png",[80,80])
-alien2 = AlienTwo('alien',"apple.png",[80,80])
-alien3 = AlienThree('alien',"apple.png",[80,80])
+#player = pygame.image.load('Juice Productions Logo copy.png').convert()
+player = Player('player',"3-Norton-BuffManFaceAni.png",[64,64],[400,720],'keys')
+alien = AlienOne('alien',"Deshawndre enemy walk copy.png",[64,64])
+alien2 = AlienTwo('alien',"Deshawndre enemy walk copy.png",[64,64])
+alien3 = AlienThree('alien',"Deshawndre enemy walk copy.png",[64,64])
 score = 0
 running = True
 while running:
