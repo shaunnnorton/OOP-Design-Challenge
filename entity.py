@@ -18,6 +18,6 @@ class Entity(ABC):
         """Should define how the Entity will move"""
         pass
 #------------------------------------------------------------------------------------------------------------------------------------
-   
+    @abstractmethod
     def draw(self):
         pass
