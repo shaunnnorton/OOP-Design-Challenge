@@ -16,7 +16,7 @@ class Player(entity.Entity):
           to be moved left and right with user input."""
         if(self.__inputType == 'mouse' and fps > 15):
             mousePos = pygame.mouse.get_pos()
-            self.position[0] = mousePos[0] - self.offset_X
+            self.position[0] = mousePos[0] - self._offset_X
             self.draw(screen)
             #pygame.display.update()
             return
@@ -32,8 +32,8 @@ class Player(entity.Entity):
                             #print("left")
                         if(self.position[0]<-1):
                             self.position[0] = 5
-                        if(self.position[0]>800-self.offset_X):
-                            self.position[0] = 800-self.offset_X
+                        if(self.position[0]>800-self._offset_X):
+                            self.position[0] = 800-self._offset_X
 
                         self.draw(screen)
                         #pygame.display.update()
@@ -44,7 +44,7 @@ class Player(entity.Entity):
     def draw(self,screen):
         """Draws image in a new position on the screen 
         object provided.(Screen needs to be updated to appear)"""
-        screen.blit(self.image,self.position)
+        screen.blit(self._image,self.position)
 
     
    
