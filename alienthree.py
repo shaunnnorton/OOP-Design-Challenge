@@ -3,27 +3,27 @@ import pygame, entity, sys, random, math
 #------------------------------------------------------------------------------------------------------------------------------------
 class AlienThree(entity.Entity):
     """Class to create and entity to be the third type of alien"""
-    def __init__(self,name,image,dimensions):
+    def __init__(self,name,image,dimensions,speed):
         """Initializes class with name(string),image(string),dimensions(list). 
         Sets the position of to a random position along the top and a random 
         position above the visual line"""
         entity.Entity.__init__(self,name,image,dimensions)
         self.__position = [random.randint(self.offset_X, 800-self.offset_X),random.randint(-200,self.offset_Y)]
+        self.speed = speed
 #------------------------------------------------------------------------------------------------------------------------------------
     def move(self,screen,fps):
         """Moves the current position in a random direction with a heavy weight to moving down"""
         directions = ['up','left','right','down','down','down','down','down','down','down','down','down']
         variable = random.choice(directions)
         if(variable == 'up'):
-            self.__position[1] += -0.12*fps
+            self.__position[1] += -self.speed*fps
         if(variable == 'left'):
-            self.__position[0] += -0.12*fps
+            self.__position[0] += -self.speed*fps
         if(variable == 'right'):
-            self.__position[0] += 0.12*fps
+            self.__position[0] += self.speed*fps
         if(variable == 'down'):
-            self.__position[1] += 0.12*fps
-        if(self.__position[1]>800):
-            self.__position = [random.randint(self.offset_X, 800-self.offset_X),random.randint(-200,self.offset_Y)]
+            self.__position[1] += self.speed*fps
+       
         self.draw(screen)
 #------------------------------------------------------------------------------------------------------------------------------------
     def detect_collision(self,object,counter):
